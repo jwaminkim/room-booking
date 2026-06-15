@@ -2,7 +2,7 @@ import type { Reservation, RoomId } from "@/types";
 
 const BASE = "/api/reservations";
 
-// ── 예약 생성 (서버에서 중복체크까지 처리)
+// ── 예약 생성 (서버에서 중복체크까지 처리) 주석테스트
 export async function createReservation(
   data: Omit<Reservation, "id" | "createdAt">
 ): Promise<{ ok: true; data: Reservation } | { ok: false; conflict?: Reservation; error: string }> {
