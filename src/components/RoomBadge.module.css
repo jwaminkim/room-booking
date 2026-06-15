@@ -1,0 +1,19 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid;
+  border-radius: 4px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.sm {
+  font-size: 11px;
+  padding: 2px 7px;
+}
+
+.md {
+  font-size: 13px;
+  padding: 4px 10px;
+}

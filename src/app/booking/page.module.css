@@ -1,0 +1,378 @@
+.container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.hero {
+  margin-bottom: 40px;
+  animation: fadeIn 0.4s ease;
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: 42px;
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 1.15;
+  margin-bottom: 10px;
+}
+
+.heroTitle em {
+  font-style: italic;
+  color: var(--accent-a);
+}
+
+.heroSub {
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+.formCard {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  animation: slideUp 0.4s ease;
+}
+
+.section {}
+
+.sectionTitle {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+/* Room cards */
+.roomGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.roomCard {
+  background: var(--bg-elevated);
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  padding: 18px 16px;
+  text-align: left;
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.roomCard:hover {
+  border-color: var(--border-active);
+  background: var(--bg-hover);
+  transform: translateY(-1px);
+}
+
+.roomCard.roomSelected {
+  border-color: var(--room-accent, var(--accent-a));
+  background: color-mix(in srgb, var(--room-accent, var(--accent-a)) 8%, var(--bg-elevated));
+  box-shadow: 0 0 0 1px var(--room-accent, var(--accent-a)) inset,
+              0 4px 16px color-mix(in srgb, var(--room-accent, var(--accent-a)) 20%, transparent);
+}
+
+.roomBadge {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.roomSelected .roomBadge {
+  color: var(--room-accent, var(--accent-a));
+}
+
+.roomDesc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.roomCap {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Row / Field */
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.input {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  padding: 10px 14px;
+  font-size: 14px;
+  width: 100%;
+  transition: border-color var(--transition);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.input:focus {
+  border-color: var(--border-active);
+}
+
+.input::-webkit-calendar-picker-indicator {
+  filter: invert(0.6);
+}
+
+/* Alerts */
+.conflictAlert, .errorAlert {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  animation: fadeIn 0.3s ease;
+}
+
+.conflictAlert {
+  background: color-mix(in srgb, var(--accent-yellow) 10%, var(--bg-elevated));
+  border: 1px solid color-mix(in srgb, var(--accent-yellow) 30%, transparent);
+}
+
+.errorAlert {
+  background: color-mix(in srgb, var(--accent-a) 10%, var(--bg-elevated));
+  border: 1px solid color-mix(in srgb, var(--accent-a) 30%, transparent);
+  color: var(--accent-a);
+}
+
+.alertIcon {
+  font-size: 18px;
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+
+.conflictAlert .alertIcon {
+  color: var(--accent-yellow);
+}
+
+.alertTitle {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.alertDesc {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.alertDesc strong {
+  color: var(--text-primary);
+}
+
+/* Submit */
+.submitBtn {
+  background: var(--accent-a);
+  color: #fff;
+  border-radius: var(--radius-md);
+  padding: 16px;
+  font-size: 15px;
+  font-weight: 600;
+  width: 100%;
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  letter-spacing: 0.02em;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--accent-a) 85%, white);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--accent-a) 40%, transparent);
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+/* Success */
+.successCard {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 60px 36px;
+  text-align: center;
+  animation: slideUp 0.5s ease;
+}
+
+.successIcon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent-c) 15%, transparent);
+  border: 2px solid var(--accent-c);
+  color: var(--accent-c);
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.successTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 32px;
+}
+
+.successDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 360px;
+  margin: 0 auto 36px;
+  text-align: left;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.detailLabel {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.detailValue {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.resetBtn {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  padding: 13px 32px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all var(--transition);
+}
+
+.resetBtn:hover {
+  border-color: var(--border-active);
+  background: var(--bg-hover);
+}
+
+@media (max-width: 600px) {
+  .roomGrid {
+    grid-template-columns: 1fr;
+  }
+  .row {
+    grid-template-columns: 1fr;
+  }
+  .formCard {
+    padding: 24px 20px;
+  }
+  .heroTitle {
+    font-size: 32px;
+  }
+}
+
+/* Duration hint inline label */
+.durationHint {
+  margin-left: 8px;
+  font-size: 11px;
+  color: var(--accent-c);
+  font-weight: 600;
+}
+
+.capHint {
+  margin-left: 8px;
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* Summary bar */
+.summaryBar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  color: var(--text-secondary);
+  flex-wrap: wrap;
+  animation: fadeIn 0.25s ease;
+}
+
+.summaryRoom {
+  font-weight: 700;
+}
+
+.summarySep {
+  color: var(--text-muted);
+}
+
+/* Duration badge in success */
+.durationBadge {
+  margin-left: 8px;
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--accent-c) 15%, transparent);
+  color: var(--accent-c);
+  font-weight: 600;
+}
+
+/* Success sub */
+.successSub {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-top: -16px;
+  margin-bottom: 28px;
+}

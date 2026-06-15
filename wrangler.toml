@@ -1,0 +1,8 @@
+name = "room-booking"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = "./out"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "room-booking-db"
+database_id = "884386b6-7ad3-4e83-95a5-49508b8517d1"   # wrangler d1 create 후 교체
